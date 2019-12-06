@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<title>Entry Management System</title>
+		<link rel="stylesheet" href="../static/css/style.css">
+	</head>
+	<body>
+
+		<div id="login-box">
+			<div class="vl"></div>
+			<img src="../../static/img/logo.jpg" class="img_logo">
+			<div class="left">
+				<form action="{% url 'add_data_db' %}" method="post">
+					{% csrf_token %}
+
+					<h1>Visitor Details</h1>
+					<input type="text" name="visitor_name" placeholder="Visitor's Name: " />
+					<input type="text" name="visitor_email" placeholder="Visitor's E-mail" />
+					<input type="text" name="visitor_number" placeholder="Visitor's Phone Number" />
+
+					<h1>Host Details</h1>
+					<input type="text" name="host_name" placeholder="Host Name" />
+					<input type="text" name="host_email" placeholder="Host E-mail" />
+					<input type="text" name="host_number" placeholder="Host Phone Number" />
+
+					<input type="submit" name="signup_submit" value="Submit" />
+					
+				</form>
+			</div>
+	 		<div class="right">
+
+					{% if details %} 
+
+						{% for iterators in details  %}
+								<div style="width: 100%;height:auto; border-bottom: 2px solid #DDD;">
+								<p>Visitor Details</p>
+								<p>Name: {{ iterators.visitor_name }} <br> Email: {{ iterators.visitor_email }}<br> Number: {{ iterators.visitor_number }}</p>
+								<p>Host Details</p>
+								<p>Name: {{ iterators.host_name }} <br> Email: {{ iterators.host_email }} <br> Number: {{ iterators.host_number }}</p>
+								<a href="#"> <input type="submit" value="Click Here"> </a>
+							</div>
+						{% endfor %}
+					{% else %}
+					  <p>No visitors</p>
+					{% endif %}
+
+			</div>
+		</div>
+		<p style="text-align: center;">Logo <cite>Image by</cite> Alexas_Fotos from Pixabay</p>
+	</body>
+</html>
