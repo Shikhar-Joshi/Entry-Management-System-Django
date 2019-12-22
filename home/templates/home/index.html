@@ -32,12 +32,11 @@
 
 						{% for iterators in details  %}
 								<div style="width: 100%;height:auto; border-bottom: 2px solid #DDD;">
-								<p>Visitor Details</p>
-								<p>Name: {{ iterators.visitor_name }} <br> Email: {{ iterators.visitor_email }}<br> Number: {{ iterators.visitor_number }}</p>
-								<p>Host Details</p>
-								<p>Name: {{ iterators.host_name }} <br> Email: {{ iterators.host_email }} <br> Number: {{ iterators.host_number }}</p>
-								<a href="#"> <input type="submit" value="Click Here"> </a>
-							</div>
+									<p>Visitor Details</p>
+									<p>Name: {{ iterators.visitor_name }} <br> Email: {{ iterators.visitor_email }}<br> Number: {{ iterators.visitor_number }}</p>
+									<p>Host Details</p>
+									<p>Name: {{ iterators.host_name }} <br> Email: {{ iterators.host_email }} <br> Number: {{ iterators.host_number }}</p>
+								</div>
 						{% endfor %}
 					{% else %}
 					  <p>No visitors</p>

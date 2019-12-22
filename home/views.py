@@ -31,16 +31,3 @@ def add_data_db(request):
 
     meeting_data.save()
     return redirect('home_page')
-
-
-# def checkOutTime(request,id):
-#     check_in = datetime.datetime.now().strftime('%H:%M:%S')
-#     meeting_data = Information(check_out=check_out)
-#     meeting_data.save()
-#     return redirect('home_page')
-
-# def entry_delete(request,id):
-#     entry = get_object_or_404(Information, id=id)
-#     entry.delete()
-#     return redirect(reverse)
-
